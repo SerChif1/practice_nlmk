@@ -1,0 +1,34 @@
+databaseChangeLog:
+  - changeSet:
+      id: "5"
+      author: "Сергей Чафонов"
+      changes:
+        - insert:
+            tableName: "parameters"
+            columns:
+              - column:
+                  name: "id"
+                  value: "123e4567-e89b-12d3-a456-426614174001"
+              - column:
+                  name: "name"
+                  value: "Температура"
+
+        - insert:
+            tableName: "parameters"
+            columns:
+              - column:
+                  name: "id"
+                  value: "123e4567-e89b-12d3-a456-426614174002"
+              - column:
+                  name: "name"
+                  value: "Влажность"
+
+        - insert:
+            tableName: "parameters"
+            columns:
+              - column:
+                  name: "id"
+                  value: "123e4567-e89b-12d3-a456-426614174003"
+              - column:
+                  name: "name"
+                  value: "Прочность"

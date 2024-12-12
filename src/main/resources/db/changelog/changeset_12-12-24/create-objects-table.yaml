@@ -1,0 +1,37 @@
+databaseChangeLog:
+  - changeSet:
+      id: "1"
+      author: "Сергей Чафонов"
+      changes:
+        - createTable:
+            tableName: "objects"
+            columns:
+              - column:
+                  name: "id"
+                  type: "UUID"
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                  remarks: "Уникальный идентификатор объекта"
+              - column:
+                  name: "name"
+                  type: "TEXT"
+                  constraints:
+                    nullable: false
+                  remarks: "Название объекта"
+              - column:
+                  name: "length"
+                  type: "NUMERIC(10, 2)"
+                  remarks: "Длина объекта"
+              - column:
+                  name: "width"
+                  type: "NUMERIC(10, 2)"
+                  remarks: "Ширина объекта"
+              - column:
+                  name: "weight"
+                  type: "BIGINT"
+                  remarks: "Вес объекта в граммах"
+              - column:
+                  name: "production_year"
+                  type: "INTEGER"
+                  remarks: "Год производства объекта"

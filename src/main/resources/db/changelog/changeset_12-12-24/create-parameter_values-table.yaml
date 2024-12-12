@@ -1,0 +1,39 @@
+databaseChangeLog:
+  - changeSet:
+      id: "3"
+      author: "Сергей Чафонов"
+      changes:
+        - createTable:
+            tableName: "parameter_values"
+            columns:
+              - column:
+                  name: "id"
+                  type: "UUID"
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                  remarks: "Уникальный идентификатор записи"
+              - column:
+                  name: "object_id"
+                  type: "UUID"
+                  constraints:
+                    nullable: false
+                  remarks: "Внешний ключ, ссылающийся на objects.id"
+              - column:
+                  name: "parameter_id"
+                  type: "UUID"
+                  constraints:
+                    nullable: false
+                  remarks: "Внешний ключ, ссылающийся на parameters.id"
+              - column:
+                  name: "value"
+                  type: "TEXT"
+                  constraints:
+                    nullable: false
+                  remarks: "Значение параметра"
+              - column:
+                  name: "measured_at"
+                  type: "TIMESTAMP"
+                  constraints:
+                    nullable: false
+                  remarks: "Дата и время измерения значения параметра"

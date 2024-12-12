@@ -1,0 +1,21 @@
+databaseChangeLog:
+  - changeSet:
+      id: "2"
+      author: "Сергей Чафонов"
+      changes:
+        - createTable:
+            tableName: "parameters"
+            columns:
+              - column:
+                  name: "id"
+                  type: "UUID"
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                  remarks: "Уникальный идентификатор параметра"
+              - column:
+                  name: "name"
+                  type: "TEXT"
+                  constraints:
+                    nullable: false
+                  remarks: "Название параметра"

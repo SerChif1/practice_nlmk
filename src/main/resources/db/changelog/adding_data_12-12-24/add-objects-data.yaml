@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - changeSet:
+      id: "4"
+      author: "Сергей Чафонов"
+      changes:
+        - insert:
+            tableName: "objects"
+            columns:
+              - column:
+                  name: "id"
+                  value: "123e4567-e89b-12d3-a456-426614174000"
+              - column:
+                  name: "name"
+                  value: "Металл"
+              - column:
+                  name: "length"
+                  value: "10.00"
+              - column:
+                  name: "width"
+                  value: "5.50"
+              - column:
+                  name: "weight"
+                  value: "1500"
+              - column:
+                  name: "production_year"
+                  value: "2023"

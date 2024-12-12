@@ -1,0 +1,61 @@
+databaseChangeLog:
+  - changeSet:
+      id: "6"
+      author: "Сергей Чафонов"
+      changes:
+        - insert:
+            tableName: "parameter_values"
+            columns:
+              - column:
+                  name: "id"
+                  value: "123e4567-e89b-12d3-a456-426614174010"
+              - column:
+                  name: "object_id"
+                  value: "123e4567-e89b-12d3-a456-426614174000"
+              - column:
+                  name: "parameter_id"
+                  value: "123e4567-e89b-12d3-a456-426614174001"
+              - column:
+                  name: "value"
+                  value: "120°C"
+              - column:
+                  name: "measured_at"
+                  value: "2024-12-11T10:00:00"
+
+        - insert:
+            tableName: "parameter_values"
+            columns:
+              - column:
+                  name: "id"
+                  value: "123e4567-e89b-12d3-a456-426614174011"
+              - column:
+                  name: "object_id"
+                  value: "123e4567-e89b-12d3-a456-426614174000"
+              - column:
+                  name: "parameter_id"
+                  value: "123e4567-e89b-12d3-a456-426614174002"
+              - column:
+                  name: "value"
+                  value: "50%"
+              - column:
+                  name: "measured_at"
+                  value: "2024-12-11T10:10:00"
+
+        - insert:
+            tableName: "parameter_values"
+            columns:
+              - column:
+                  name: "id"
+                  value: "123e4567-e89b-12d3-a456-426614174012"
+              - column:
+                  name: "object_id"
+                  value: "123e4567-e89b-12d3-a456-426614174000"
+              - column:
+                  name: "parameter_id"
+                  value: "123e4567-e89b-12d3-a456-426614174003"
+              - column:
+                  name: "value"
+                  value: "200 MPa"
+              - column:
+                  name: "measured_at"
+                  value: "2024-12-11T10:20:00"

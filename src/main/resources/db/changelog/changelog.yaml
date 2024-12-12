@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/changeset_12-12-24/create-objects-table.yaml
+  - include:
+      file: db/changelog/changeset_12-12-24/create-parameter_values-table.yaml
+  - include:
+      file: db/changelog/changeset_12-12-24/create-parameters-table.yaml
+
+  - include:
+      file: db/changelog/adding_data_12-12-24/add-objects-data.yaml
+  - include:
+      file: db/changelog/adding_data_12-12-24/add-parameters-data.yaml
+  - include:
+      file: db/changelog/adding_data_12-12-24/add-parameter-values-data.yaml
