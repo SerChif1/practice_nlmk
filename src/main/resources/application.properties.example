@@ -1,0 +1,7 @@
+spring.application.name=practiceNLMK
+
+spring.datasource.url = jdbc:postgresql://localhost:5432/practice_nlmk
+spring.datasource.username = *
+spring.datasource.password = *
+
+spring.liquibase.change-log=classpath:db/changelog/changelog.yaml
