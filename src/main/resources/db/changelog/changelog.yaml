@@ -12,3 +12,10 @@ databaseChangeLog:
       file: db/changelog/adding_data_12-12-24/add-parameters-data.yaml
   - include:
       file: db/changelog/adding_data_12-12-24/add-parameter-values-data.yaml
+
+  - include:
+      file: db/changelog/adding_data_13-12-24/add-objects-data.yaml
+  - include:
+      file: db/changelog/adding_data_13-12-24/add-parameters-data.yaml
+  - include:
+      file: db/changelog/adding_data_13-12-24/add-parameter-values-data.yaml

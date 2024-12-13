@@ -1,0 +1,268 @@
+databaseChangeLog:
+  - changeSet:
+      id: "7"
+      author: "Сергей Чафонов"
+      changes:
+        - insert:
+            tableName: "objects"
+            columns:
+              - column:
+                  name: "id"
+                  value: "123e4567-e89b-12d3-a456-426614174001"
+              - column:
+                  name: "name"
+                  value: "Дерево"
+              - column:
+                  name: "length"
+                  value: "8.00"
+              - column:
+                  name: "width"
+                  value: "4.00"
+              - column:
+                  name: "weight"
+                  value: "800"
+              - column:
+                  name: "production_year"
+                  value: "2022"
+
+        - insert:
+            tableName: "objects"
+            columns:
+              - column:
+                  name: "id"
+                  value: "123e4567-e89b-12d3-a456-426614174003"
+              - column:
+                  name: "name"
+                  value: "Стекло"
+              - column:
+                  name: "length"
+                  value: "15.00"
+              - column:
+                  name: "width"
+                  value: "3.50"
+              - column:
+                  name: "weight"
+                  value: "1200"
+              - column:
+                  name: "production_year"
+                  value: "2020"
+
+        - insert:
+            tableName: "objects"
+            columns:
+              - column:
+                  name: "id"
+                  value: "123e4567-e89b-12d3-a456-426614174002"
+              - column:
+                  name: "name"
+                  value: "Пластик"
+              - column:
+                  name: "length"
+                  value: "12.00"
+              - column:
+                  name: "width"
+                  value: "6.00"
+              - column:
+                  name: "weight"
+                  value: "500"
+              - column:
+                  name: "production_year"
+                  value: "2021"
+
+        - insert:
+            tableName: "objects"
+            columns:
+              - column:
+                  name: "id"
+                  value: "123e4567-e89b-12d3-a456-426614174004"
+              - column:
+                  name: "name"
+                  value: "Керамика"
+              - column:
+                  name: "length"
+                  value: "9.50"
+              - column:
+                  name: "width"
+                  value: "4.50"
+              - column:
+                  name: "weight"
+                  value: "900"
+              - column:
+                  name: "production_year"
+                  value: "2019"
+
+        - insert:
+            tableName: "objects"
+            columns:
+              - column:
+                  name: "id"
+                  value: "123e4567-e89b-12d3-a456-426614174005"
+              - column:
+                  name: "name"
+                  value: "Бетон"
+              - column:
+                  name: "length"
+                  value: "20.00"
+              - column:
+                  name: "width"
+                  value: "10.00"
+              - column:
+                  name: "weight"
+                  value: "2500"
+              - column:
+                  name: "production_year"
+                  value: "2018"
+
+        - insert:
+            tableName: "objects"
+            columns:
+              - column:
+                  name: "id"
+                  value: "123e4567-e89b-12d3-a456-426614174006"
+              - column:
+                  name: "name"
+                  value: "Резина"
+              - column:
+                  name: "length"
+                  value: "7.00"
+              - column:
+                  name: "width"
+                  value: "3.00"
+              - column:
+                  name: "weight"
+                  value: "600"
+              - column:
+                  name: "production_year"
+                  value: "2021"
+
+        - insert:
+            tableName: "objects"
+            columns:
+              - column:
+                  name: "id"
+                  value: "123e4567-e89b-12d3-a456-426614174007"
+              - column:
+                  name: "name"
+                  value: "Кожа"
+              - column:
+                  name: "length"
+                  value: "5.00"
+              - column:
+                  name: "width"
+                  value: "2.50"
+              - column:
+                  name: "weight"
+                  value: "300"
+              - column:
+                  name: "production_year"
+                  value: "2020"
+
+        - insert:
+            tableName: "objects"
+            columns:
+              - column:
+                  name: "id"
+                  value: "123e4567-e89b-12d3-a456-426614174008"
+              - column:
+                  name: "name"
+                  value: "Асфальт"
+              - column:
+                  name: "length"
+                  value: "25.00"
+              - column:
+                  name: "width"
+                  value: "15.00"
+              - column:
+                  name: "weight"
+                  value: "3000"
+              - column:
+                  name: "production_year"
+                  value: "2017"
+
+        - insert:
+            tableName: "objects"
+            columns:
+              - column:
+                  name: "id"
+                  value: "123e4567-e89b-12d3-a456-426614174009"
+              - column:
+                  name: "name"
+                  value: "Гипс"
+              - column:
+                  name: "length"
+                  value: "6.00"
+              - column:
+                  name: "width"
+                  value: "3.00"
+              - column:
+                  name: "weight"
+                  value: "400"
+              - column:
+                  name: "production_year"
+                  value: "2019"
+
+        - insert:
+            tableName: "objects"
+            columns:
+              - column:
+                  name: "id"
+                  value: "123e4567-e89b-12d3-a456-426614174010"
+              - column:
+                  name: "name"
+                  value: "Фибробетон"
+              - column:
+                  name: "length"
+                  value: "18.00"
+              - column:
+                  name: "width"
+                  value: "9.00"
+              - column:
+                  name: "weight"
+                  value: "2200"
+              - column:
+                  name: "production_year"
+                  value: "2021"
+
+        - insert:
+            tableName: "objects"
+            columns:
+              - column:
+                  name: "id"
+                  value: "123e4567-e89b-12d3-a456-426614174011"
+              - column:
+                  name: "name"
+                  value: "Мрамор"
+              - column:
+                  name: "length"
+                  value: "14.00"
+              - column:
+                  name: "width"
+                  value: "7.00"
+              - column:
+                  name: "weight"
+                  value: "1800"
+              - column:
+                  name: "production_year"
+                  value: "2018"
+
+        - insert:
+            tableName: "objects"
+            columns:
+              - column:
+                  name: "id"
+                  value: "123e4567-e89b-12d3-a456-426614174012"
+              - column:
+                  name: "name"
+                  value: "Солома"
+              - column:
+                  name: "length"
+                  value: "3.00"
+              - column:
+                  name: "width"
+                  value: "1.50"
+              - column:
+                  name: "weight"
+                  value: "200"
+              - column:
+                  name: "production_year"
+                  value: "2022"

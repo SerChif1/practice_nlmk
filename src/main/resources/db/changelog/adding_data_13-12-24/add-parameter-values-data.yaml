@@ -1,0 +1,194 @@
+databaseChangeLog:
+  - changeSet:
+      id: "9"
+      author: "Сергей Чафонов"
+      changes:
+        - insert:
+            tableName: "parameter_values"
+            columns:
+              - column:
+                  name: "id"
+                  value: "123e4567-e89b-12d3-a456-426614174009"
+              - column:
+                  name: "object_id"
+                  value: "123e4567-e89b-12d3-a456-426614174001"  # Дерево
+              - column:
+                  name: "parameter_id"
+                  value: "123e4567-e89b-12d3-a456-426614174001"  # Температура
+              - column:
+                  name: "value"
+                  value: "25°C"
+              - column:
+                  name: "measured_at"
+                  value: "2024-12-11T10:00:00"
+
+        - insert:
+            tableName: "parameter_values"
+            columns:
+              - column:
+                  name: "id"
+                  value: "123e4567-e89b-12d3-a456-426614174008"
+              - column:
+                  name: "object_id"
+                  value: "123e4567-e89b-12d3-a456-426614174001"  # Дерево
+              - column:
+                  name: "parameter_id"
+                  value: "123e4567-e89b-12d3-a456-426614174002"  # Влажность
+              - column:
+                  name: "value"
+                  value: "40%"
+              - column:
+                  name: "measured_at"
+                  value: "2024-12-11T10:10:00"
+
+        - insert:
+            tableName: "parameter_values"
+            columns:
+              - column:
+                  name: "id"
+                  value: "123e4567-e89b-12d3-a456-426614174007"
+              - column:
+                  name: "object_id"
+                  value: "123e4567-e89b-12d3-a456-426614174002"  # Пластик
+              - column:
+                  name: "parameter_id"
+                  value: "123e4567-e89b-12d3-a456-426614174003"  # Прочность
+              - column:
+                  name: "value"
+                  value: "150 MPa"
+              - column:
+                  name: "measured_at"
+                  value: "2024-12-11T10:20:00"
+
+        - insert:
+            tableName: "parameter_values"
+            columns:
+              - column:
+                  name: "id"
+                  value: "123e4567-e89b-12d3-a456-426614174013"
+              - column:
+                  name: "object_id"
+                  value: "123e4567-e89b-12d3-a456-426614174003"  # Стекло
+              - column:
+                  name: "parameter_id"
+                  value: "123e4567-e89b-12d3-a456-426614174001"  # Температура
+              - column:
+                  name: "value"
+                  value: "30°C"
+              - column:
+                  name: "measured_at"
+                  value: "2024-12-11T10:30:00"
+
+        - insert:
+            tableName: "parameter_values"
+            columns:
+              - column:
+                  name: "id"
+                  value: "123e4567-e89b-12d3-a456-426614174014"
+              - column:
+                  name: "object_id"
+                  value: "123e4567-e89b-12d3-a456-426614174003"  # Стекло
+              - column:
+                  name: "parameter_id"
+                  value: "123e4567-e89b-12d3-a456-426614174002"  # Влажность
+              - column:
+                  name: "value"
+                  value: "35%"
+              - column:
+                  name: "measured_at"
+                  value: "2024-12-11T10:40:00"
+
+        - insert:
+            tableName: "parameter_values"
+            columns:
+              - column:
+                  name: "id"
+                  value: "123e4567-e89b-12d3-a456-426614174015"
+              - column:
+                  name: "object_id"
+                  value: "123e4567-e89b-12d3-a456-426614174004"  # Керамика
+              - column:
+                  name: "parameter_id"
+                  value: "123e4567-e89b-12d3-a456-426614174003"  # Прочность
+              - column:
+                  name: "value"
+                  value: "80 MPa"
+              - column:
+                  name: "measured_at"
+                  value: "2024-12-11T10:50:00"
+
+        - insert:
+            tableName: "parameter_values"
+            columns:
+              - column:
+                  name: "id"
+                  value: "123e4567-e89b-12d3-a456-426614174016"
+              - column:
+                  name: "object_id"
+                  value: "123e4567-e89b-12d3-a456-426614174005"  # Бетон
+              - column:
+                  name: "parameter_id"
+                  value: "123e4567-e89b-12d3-a456-426614174001"  # Температура
+              - column:
+                  name: "value"
+                  value: "15°C"
+              - column:
+                  name: "measured_at"
+                  value: "2024-12-11T11:00:00"
+
+        - insert:
+            tableName: "parameter_values"
+            columns:
+              - column:
+                  name: "id"
+                  value: "123e4567-e89b-12d3-a456-426614174017"
+              - column:
+                  name: "object_id"
+                  value: "123e4567-e89b-12d3-a456-426614174006"  # Резина
+              - column:
+                  name: "parameter_id"
+                  value: "123e4567-e89b-12d3-a456-426614174002"  # Влажность
+              - column:
+                  name: "value"
+                  value: "60%"
+              - column:
+                  name: "measured_at"
+                  value: "2024-12-11T11:10:00"
+
+        - insert:
+            tableName: "parameter_values"
+            columns:
+              - column:
+                  name: "id"
+                  value: "123e4567-e89b-12d3-a456-426614174018"
+              - column:
+                  name: "object_id"
+                  value: "123e4567-e89b-12d3-a456-426614174007"  # Кожа
+              - column:
+                  name: "parameter_id"
+                  value: "123e4567-e89b-12d3-a456-426614174003"  # Прочность
+              - column:
+                  name: "value"
+                  value: "70 MPa"
+              - column:
+                  name: "measured_at"
+                  value: "2024-12-11T11:20:00"
+
+        - insert:
+            tableName: "parameter_values"
+            columns:
+              - column:
+                  name: "id"
+                  value: "123e4567-e89b-12d3-a456-426614174019"
+              - column:
+                  name: "object_id"
+                  value: "123e4567-e89b-12d3-a456-426614174008"  # Асфальт
+              - column:
+                  name: "parameter_id"
+                  value: "123e4567-e89b-12d3-a456-426614174001"  # Температура
+              - column:
+                  name: "value"
+                  value: "20°C"
+              - column:
+                  name: "measured_at"
+                  value: "2024-12-11T11:30:00"
