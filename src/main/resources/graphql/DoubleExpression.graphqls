@@ -1,0 +1,10 @@
+input DoubleExpression {
+    multipleChoice: [Float]
+    equal: Float
+    notEqual: Float
+    greaterThan: Float
+    greaterThanOrEqual: Float
+    lessThan: Float
+    lessThanOrEqual: Float
+    between: [Float]
+}

@@ -1,0 +1,10 @@
+input DateTimeExpression {
+    multipleChoice: [String] #String для представления даты в формате ISO
+    equal: String
+    notEqual: String
+    greaterThan: String
+    greaterThanOrEqual: String
+    lessThan: String
+    lessThanOrEqual: String
+    between: [String]
+}

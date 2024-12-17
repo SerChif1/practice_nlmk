@@ -1,0 +1,9 @@
+input StringExpression {
+    multipleChoice: [String]
+    contains: String
+    notContains: String
+    startsWith: String
+    endsWith: String
+    equal: String
+    notEqual: String
+}

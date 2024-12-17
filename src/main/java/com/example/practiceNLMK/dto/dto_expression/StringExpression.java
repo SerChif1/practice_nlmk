@@ -1,7 +1,12 @@
 package com.example.practiceNLMK.dto.dto_expression;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.List;
 
+@Getter
+@Setter
 public class StringExpression {
     private List<String> multipleChoice; // Множественный выбор
     private String contains; // Строка содержит

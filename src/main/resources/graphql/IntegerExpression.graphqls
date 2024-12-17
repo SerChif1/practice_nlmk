@@ -1,0 +1,10 @@
+input IntegerExpression {
+    multipleChoice: [Int]
+    equal: Int
+    notEqual: Int
+    greaterThan: Int
+    greaterThanOrEqual: Int
+    lessThan: Int
+    lessThanOrEqual: Int
+    between: [Int]
+}

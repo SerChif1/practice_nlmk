@@ -1,0 +1,8 @@
+input GraphQlFilter {
+    field: String!
+    stringExpression: StringExpression
+    integerExpression: IntegerExpression
+    longExpression: LongExpression
+    doubleExpression: DoubleExpression
+    dateTimeExpression: DateTimeExpression
+}

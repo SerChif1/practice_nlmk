@@ -1,7 +1,11 @@
 package com.example.practiceNLMK.dto;
 
 import com.example.practiceNLMK.dto.dto_expression.*;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class GraphQlFilter {
     // Название поля, к которому применяется фильтр (обязательное)
     private String field;

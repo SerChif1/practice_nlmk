@@ -1,7 +1,12 @@
 package com.example.practiceNLMK.dto.dto_expression;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.List;
 
+@Getter
+@Setter
 public class IntegerExpression {
     private List<Integer> multipleChoice; // Множественный выбор
     private Integer equal; // Равно
