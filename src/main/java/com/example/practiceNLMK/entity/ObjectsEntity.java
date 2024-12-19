@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -27,4 +28,7 @@ public class ObjectsEntity {
     private Long weight;
 
     private Integer production_year;
+
+    @OneToMany(mappedBy = "object_id", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<ParametrValuesEntity> parameterValues;
 }

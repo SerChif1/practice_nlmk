@@ -1,12 +1,16 @@
 package com.example.practiceNLMK.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.sql.Timestamp;
 import java.util.UUID;
 
 @Entity
 @Table(name = "parameter_values")
+@Getter
+@Setter
 public class ParametrValuesEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
