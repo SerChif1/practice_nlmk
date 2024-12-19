@@ -2,6 +2,7 @@ package com.example.practiceNLMK.service;
 
 import com.example.practiceNLMK.dto.GraphQlFilter;
 import com.example.practiceNLMK.dto.ObjectsData;
+import com.example.practiceNLMK.dto.dto_expression.DoubleExpression;
 import com.example.practiceNLMK.dto.dto_expression.IntegerExpression;
 import com.example.practiceNLMK.dto.dto_expression.LongExpression;
 import com.example.practiceNLMK.dto.dto_expression.StringExpression;
@@ -15,7 +16,6 @@ import jakarta.persistence.criteria.Predicate;
 import jakarta.persistence.criteria.Root;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -156,6 +156,48 @@ public class ObjectsService implements GraphQLQueryResolver {
 
                     if (longExpression.getBetween() != null && longExpression.getBetween().size() == 2) {
                         predicates.add(cb.between(root.get(field), longExpression.getBetween().get(0), longExpression.getBetween().get(1)));
+                    }
+                }
+
+                // DOUBLE ФИЛЬТР
+                if (filter.getDoubleExpression() != null) {
+                    DoubleExpression doubleExpression = filter.getDoubleExpression();
+                    String field = filter.getField();
+
+                    if (doubleExpression.getMultipleChoice() != null && !doubleExpression.getMultipleChoice().isEmpty()) {
+                        CriteriaBuilder.In<Double> inClause = cb.in(root.get(field));
+                        for (Double choice : doubleExpression.getMultipleChoice()) {
+                            inClause.value(choice);
+                        }
+                        predicates.add(inClause);
+                    }
+
+                    if (doubleExpression.getEqual() != null) {
+                        predicates.add(cb.equal(root.get(field), doubleExpression.getEqual()));
+                    }
+
+                    if (doubleExpression.getNotEqual() != null) {
+                        predicates.add(cb.notEqual(root.get(field), doubleExpression.getNotEqual()));
+                    }
+
+                    if (doubleExpression.getGreaterThan() != null) {
+                        predicates.add(cb.greaterThan(root.get(field), doubleExpression.getGreaterThan()));
+                    }
+
+                    if (doubleExpression.getGreaterThanOrEqual() != null) {
+                        predicates.add(cb.greaterThanOrEqualTo(root.get(field), doubleExpression.getGreaterThanOrEqual()));
+                    }
+
+                    if (doubleExpression.getLessThan() != null) {
+                        predicates.add(cb.lessThan(root.get(field), doubleExpression.getLessThan()));
+                    }
+
+                    if (doubleExpression.getLessThanOrEqual() != null) {
+                        predicates.add(cb.lessThanOrEqualTo(root.get(field), doubleExpression.getLessThanOrEqual()));
+                    }
+
+                    if (doubleExpression.getBetween() != null && doubleExpression.getBetween().size() == 2) {
+                        predicates.add(cb.between(root.get(field), doubleExpression.getBetween().get(0), doubleExpression.getBetween().get(1)));
                     }
                 }
             }
