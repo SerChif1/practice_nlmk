@@ -2,6 +2,7 @@ package com.example.practiceNLMK.service;
 
 import com.example.practiceNLMK.dto.GraphQlFilter;
 import com.example.practiceNLMK.dto.ObjectsData;
+import com.example.practiceNLMK.dto.dto_expression.IntegerExpression;
 import com.example.practiceNLMK.dto.dto_expression.StringExpression;
 import com.example.practiceNLMK.entity.ObjectsEntity;
 import com.example.practiceNLMK.mapper.ObjectsMapper;
@@ -36,7 +37,7 @@ public class ObjectsService implements GraphQLQueryResolver {
 
         if (filters != null) {
             for (GraphQlFilter filter : filters) {
-//СТРОКОВЫЙ ФИЛЬТР
+                //СТРОКОВЫЙ ФИЛЬТР
                 if (filter.getStringExpression() != null) {
                     StringExpression stringExpression = filter.getStringExpression();
                     String field = filter.getField();
@@ -70,6 +71,48 @@ public class ObjectsService implements GraphQLQueryResolver {
 
                     if (stringExpression.getNotEqual() != null) {
                         predicates.add(cb.notEqual(root.get(field), stringExpression.getNotEqual()));
+                    }
+                }
+
+                // ЦЕЛОЧИСЛЕННЫЙ ФИЛЬТР
+                if (filter.getIntegerExpression() != null) {
+                    IntegerExpression integerExpression = filter.getIntegerExpression();
+                    String field = filter.getField();
+
+                    if (integerExpression.getMultipleChoice() != null && !integerExpression.getMultipleChoice().isEmpty()) {
+                        CriteriaBuilder.In<Integer> inClause = cb.in(root.get(field));
+                        for (Integer choice : integerExpression.getMultipleChoice()) {
+                            inClause.value(choice);
+                        }
+                        predicates.add(inClause);
+                    }
+
+                    if (integerExpression.getEqual() != null) {
+                        predicates.add(cb.equal(root.get(field), integerExpression.getEqual()));
+                    }
+
+                    if (integerExpression.getNotEqual() != null) {
+                        predicates.add(cb.notEqual(root.get(field), integerExpression.getNotEqual()));
+                    }
+
+                    if (integerExpression.getGreaterThan() != null) {
+                        predicates.add(cb.greaterThan(root.get(field), integerExpression.getGreaterThan()));
+                    }
+
+                    if (integerExpression.getGreaterThanOrEqual() != null) {
+                        predicates.add(cb.greaterThanOrEqualTo(root.get(field), integerExpression.getGreaterThanOrEqual()));
+                    }
+
+                    if (integerExpression.getLessThan() != null) {
+                        predicates.add(cb.lessThan(root.get(field), integerExpression.getLessThan()));
+                    }
+
+                    if (integerExpression.getLessThanOrEqual() != null) {
+                        predicates.add(cb.lessThanOrEqualTo(root.get(field), integerExpression.getLessThanOrEqual()));
+                    }
+
+                    if (integerExpression.getBetween() != null && integerExpression.getBetween().size() == 2) {
+                        predicates.add(cb.between(root.get(field), integerExpression.getBetween().get(0), integerExpression.getBetween().get(1)));
                     }
                 }
             }
