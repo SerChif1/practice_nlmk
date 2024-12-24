@@ -4,7 +4,6 @@ import com.example.practiceNLMK.dto.ObjectsData;
 import com.example.practiceNLMK.entity.ObjectsEntity;
 import com.example.practiceNLMK.entity.ParametrValuesEntity;
 import org.springframework.stereotype.Component;
-
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;

@@ -25,7 +25,6 @@ public class ObjectsService implements GraphQLQueryResolver {
     private final ObjectsMapper objectsMapper;
 
     public List<ObjectsData> getObjectsWithFilters(List<GraphQlFilter> filters) {
-        System.out.println("СЕРВИС: getObjectsWithFilters, получен фильтр:" + filters);
         CriteriaBuilder cb  = entityManager.getCriteriaBuilder();
         CriteriaQuery<ObjectsEntity> query = cb.createQuery(ObjectsEntity.class);
         Root<ObjectsEntity> root = query.from(ObjectsEntity.class);

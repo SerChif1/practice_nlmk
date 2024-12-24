@@ -17,7 +17,6 @@ public class ObjectsController  {
 
     @QueryMapping
     public List<ObjectsData> getObjectsWithFilters(@Argument List<GraphQlFilter> filters) {
-        System.out.println("КОНТРОЛЛЕР getObjectsWithFilters сработал");
        return objectsService.getObjectsWithFilters(filters);
     }
 }
