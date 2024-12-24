@@ -30,7 +30,7 @@ public class ObjectsMapper {
                 parameterDto.setParameterName(parameterValue.getParameter_id().getName());
                 parameterDto.setValue(parameterValue.getValue());
                 String measuredAtString = parameterValue.getMeasured_at().toString();
-                measuredAtString = measuredAtString.replace(" ", "T"); // Заменяем пробел на T// Преобразование в строку
+                measuredAtString = measuredAtString.replace(" ", "T");
                 parameterDto.setMeasuredAt(LocalDateTime.parse(measuredAtString));
 
                 dtos.add(parameterDto);

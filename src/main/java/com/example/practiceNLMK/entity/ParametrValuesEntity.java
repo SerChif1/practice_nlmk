@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
@@ -27,5 +28,5 @@ public class ParametrValuesEntity {
     private String value;
 
     @Column(name = "measured_at")
-    private Timestamp measured_at;
+    private LocalDateTime measured_at;
 }

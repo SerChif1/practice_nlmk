@@ -2,20 +2,16 @@ package com.example.practiceNLMK.service;
 
 import com.example.practiceNLMK.dto.GraphQlFilter;
 import com.example.practiceNLMK.dto.ObjectsData;
-import com.example.practiceNLMK.dto.dto_expression.DoubleExpression;
-import com.example.practiceNLMK.dto.dto_expression.IntegerExpression;
-import com.example.practiceNLMK.dto.dto_expression.LongExpression;
-import com.example.practiceNLMK.dto.dto_expression.StringExpression;
+import com.example.practiceNLMK.dto.dto_expression.*;
 import com.example.practiceNLMK.entity.ObjectsEntity;
+import com.example.practiceNLMK.entity.ParametrValuesEntity;
 import com.example.practiceNLMK.mapper.ObjectsMapper;
 import graphql.kickstart.tools.GraphQLQueryResolver;
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.criteria.CriteriaBuilder;
-import jakarta.persistence.criteria.CriteriaQuery;
-import jakarta.persistence.criteria.Predicate;
-import jakarta.persistence.criteria.Root;
+import jakarta.persistence.criteria.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -29,10 +25,11 @@ public class ObjectsService implements GraphQLQueryResolver {
     private final ObjectsMapper objectsMapper;
 
     public List<ObjectsData> getObjectsWithFilters(List<GraphQlFilter> filters) {
-        System.out.println("СЕРВИС: getObjectsWithFilters сработал");
+        System.out.println("СЕРВИС: getObjectsWithFilters, получен фильтр:" + filters);
         CriteriaBuilder cb  = entityManager.getCriteriaBuilder();
         CriteriaQuery<ObjectsEntity> query = cb.createQuery(ObjectsEntity.class);
         Root<ObjectsEntity> root = query.from(ObjectsEntity.class);
+        Join<ObjectsEntity, ParametrValuesEntity> parameterValuesJoin = root.join("parameterValues", JoinType.LEFT);
 
         List<Predicate> predicates = new ArrayList<>();
 
@@ -198,6 +195,52 @@ public class ObjectsService implements GraphQLQueryResolver {
 
                     if (doubleExpression.getBetween() != null && doubleExpression.getBetween().size() == 2) {
                         predicates.add(cb.between(root.get(field), doubleExpression.getBetween().get(0), doubleExpression.getBetween().get(1)));
+                    }
+                }
+
+                //  ФИЛЬТР ДАТЫ И ВРЕМЕНИ
+                if (filter.getDateTimeExpression() != null) {
+                    DateTimeExpression dateTimeExpression = filter.getDateTimeExpression();
+                    String field = filter.getField();
+
+                    if (field.equals("parameterValues.measured_at")) {
+                        field = "measured_at";
+                    }
+
+                    if (dateTimeExpression.getMultipleChoice() != null && !dateTimeExpression.getMultipleChoice().isEmpty()) {
+                        CriteriaBuilder.In<LocalDateTime> inClause = cb.in(parameterValuesJoin.get(field));
+                        for (LocalDateTime choice : dateTimeExpression.getMultipleChoice()) {
+                            inClause.value(choice);
+                        }
+                        predicates.add(inClause);
+                    }
+
+                    if (dateTimeExpression.getEqual() != null) {
+                        predicates.add(cb.equal(parameterValuesJoin.get(field), dateTimeExpression.getEqual()));
+                    }
+
+                    if (dateTimeExpression.getNotEqual() != null) {
+                        predicates.add(cb.notEqual(parameterValuesJoin.get(field), dateTimeExpression.getNotEqual()));
+                    }
+
+                    if (dateTimeExpression.getGreaterThan() != null) {
+                        predicates.add(cb.greaterThan(parameterValuesJoin.get(field), dateTimeExpression.getGreaterThan()));
+                    }
+
+                    if (dateTimeExpression.getGreaterThanOrEqual() != null) {
+                        predicates.add(cb.greaterThanOrEqualTo(parameterValuesJoin.get(field), dateTimeExpression.getGreaterThanOrEqual()));
+                    }
+
+                    if (dateTimeExpression.getLessThan() != null) {
+                        predicates.add(cb.lessThan(parameterValuesJoin.get(field), dateTimeExpression.getLessThan()));
+                    }
+
+                    if (dateTimeExpression.getLessThanOrEqual() != null) {
+                        predicates.add(cb.lessThanOrEqualTo(parameterValuesJoin.get(field), dateTimeExpression.getLessThanOrEqual()));
+                    }
+
+                    if (dateTimeExpression.getBetween() != null && dateTimeExpression.getBetween().size() == 2) {
+                        predicates.add(cb.between(parameterValuesJoin.get(field), dateTimeExpression.getBetween().get(0), dateTimeExpression.getBetween().get(1)));
                     }
                 }
             }

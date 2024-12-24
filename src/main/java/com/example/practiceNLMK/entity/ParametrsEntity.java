@@ -18,7 +18,6 @@ public class ParametrsEntity {
 
     private String name;
 
-    // Если нужно, можно добавить обратную связь
     @OneToMany(mappedBy = "parameter_id", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<ParametrValuesEntity> parameterValues;
 }

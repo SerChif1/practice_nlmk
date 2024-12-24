@@ -11,5 +11,5 @@ type ObjectsData {
     objectProductionYear: Int
     parameterName: String
     value: String
-    measuredAt: String #String для представления LocalDateTime
+    measuredAt: String
 }
